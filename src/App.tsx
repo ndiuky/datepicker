@@ -1,4 +1,5 @@
 import React from 'react';
+import { Analytics  } from "@vercel/analytics/react"
 
 import { Calendar } from './components';
 import { formatDate } from './utils/helpers/date';
@@ -10,8 +11,8 @@ export const App: React.FC = () => {
 
   return (
     <div className='app__container'>
+      <Analytics/>
       <div className='date__container'>{formatDate(selectedDate, 'DDD DD MMM YYYY')}</div>
-
       <Calendar selectedDate={selectedDate} selectDate={(date) => setSelectedDay(date)} />
     </div>
   );
